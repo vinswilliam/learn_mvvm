@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:bind="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="movie"
+            type="com.example.testmandiri.moviedb.detail.data.MovieDetail" />
+    </data>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:scaleType="fitCenter"
+                bind:imgMoviePoster="@{movie.backdropPath}"
+                android:id="@+id/moviePoster"
+                android:background="#cccccc"
+                android:layout_marginBottom="16dp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/movieTitle"
+                android:text="@{movie.title}"
+                android:textStyle="bold"
+                android:layout_marginBottom="16dp"
+                android:textSize="24dp"
+                tools:text="TITLE"/>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="16dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/movieReleaseDate"
+                    android:text="@{movie.releaseDate}"
+                    android:textSize="16sp"
+                    android:textColor="#808080"
+                    tools:text="@tools:sample/date/ddmmyy"
+                    android:layout_marginRight="8dp"
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="8dp"
+                    android:text="-"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/movieRunningTime"
+                    android:textSize="16sp"
+                    android:textColor="#808080"
+                    tools:text="123 minutes"
+                    android:layout_marginRight="8dp"
+                    android:text="@{movie.runtime + ` minutes`}"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="8dp"
+                    android:text="-"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/movieStatus"
+                    android:text="@{movie.status}"
+                    android:textSize="16sp"
+                    android:textColor="#808080"
+                    tools:text="Released"/>
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Overview"
+                android:textSize="16sp"
+                android:layout_marginBottom="16dp"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/movieOverview"
+                android:text="@{movie.overview}"
+                android:textSize="16sp"
+                tools:text="@tools:sample/lorem"
+                android:layout_marginBottom="16dp"/>
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="REVIEW"
+                android:id="@+id/btnReview"
+                android:layout_gravity="center"
+                android:layout_marginBottom="16dp"/>
+
+            <WebView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/youtubePlayer"/>
+
+        </LinearLayout>
+    </ScrollView>
+</layout>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_main"
+    app:startDestination="@id/listGenreFragment">
+
+    <fragment
+        android:id="@+id/listGenreFragment"
+        android:name="com.example.testmandiri.genre.ui.GenreFragment"
+        android:label="UserFragment" >
+        <action
+            android:id="@+id/action_listGenreFragment_to_listMovieDbFragment"
+            app:destination="@id/listMovieDbFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/listMovieDbFragment"
+        android:name="com.example.testmandiri.moviedb.list.ui.ListMovieDbFragment"
+        android:label="ListMovieDbFragment" >
+        <action
+            android:id="@+id/action_listMovieDbFragment_to_movieDetailFragment"
+            app:destination="@id/movieDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/movieDetailFragment"
+        android:name="com.example.testmandiri.moviedb.detail.ui.MovieDetailFragment"
+        android:label="MovieDetailFragment" >
+        <action
+            android:id="@+id/action_movieDetailFragment_to_reviewFragment"
+            app:destination="@id/reviewFragment" />
+        <action
+            android:id="@+id/action_movieDetailFragment_to_videoFragment"
+            app:destination="@id/videoFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/reviewFragment"
+        android:name="com.example.testmandiri.review.ui.ReviewFragment"
+        android:label="ReviewFragment" />
+    <fragment
+        android:id="@+id/videoFragment"
+        android:name="com.example.testmandiri.video.ui.VideoFragment"
+        android:label="VideoFragment" />
+</navigation>
